@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Socket.IO Fiddle</title>
+  </head>
+
+  <body>
+    <h2>Hey, this server is running 🥳</h2>
+    <h2>Status: <span id="status">Disconnected</span></h2>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const status = document.getElementById("status");
+
+      const socket = io({
+        // Socket.IO options
+      });
+
+      socket.on("connect", () => {
+        status.innerText = "Connected";
+      });
+
+      socket.on("disconnect", (reason) => {
+        status.innerText = "Disconnected";
+      });
+    </script>
+  </body>
+</html>
