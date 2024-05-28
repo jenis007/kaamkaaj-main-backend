@@ -1,7 +1,7 @@
 const { app, server } = require('./app');
 const mongoose = require("mongoose")
 mongoose.set('strictQuery', true);
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 4000;
 
 mongoose.connect(process.env.DB_URI).then(() => {
     console.log("Connection is Successful")
