@@ -4,7 +4,7 @@ const recruitersCantroller = require("../controller/admin/recruitersCantroller")
 const candidateCantroller = require("../controller/admin/candidateCantroller");
 const { getRecruiterDetails } = require("../controller/app/Recruiter/profileController");
 const jobController = require("../controller/app/Recruiter/jobController");
-const premiumPlanCantroller = require("../controller/admin/PremiumPlanCantroller");
+const premiumPlanCantroller = require("../controller/admin/premiumPlanCantroller");
 const filterCantroller = require("../controller/admin/filterCantroller");
 
 const router = express.Router()
