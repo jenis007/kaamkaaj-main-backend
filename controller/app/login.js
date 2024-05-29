@@ -45,6 +45,7 @@ module.exports.sentOtp = async (req, res, next) => {
 
 module.exports.login = async (req, res, next) => {
     try {
+        let isNewUser;
         const { country_code, mobile_number, otp, type } = req.body;
         if (!country_code || !mobile_number || !otp || !type || (type !== 'candidate' && type !== 'recruiter')) {
             return next(new ErrorHandler("Please provide valid country code, mobile number, OTP, and type (either 'candidate' or 'recruiter')", StatusCodes.BAD_REQUEST));
@@ -69,10 +70,9 @@ module.exports.login = async (req, res, next) => {
             } else if (type === 'recruiter') {
                 user = await Recruiter.create({ mobile_number, country_code });
             }
-            const isNewUser = true;
+            isNewUser = true;
         } else {
-            // User is existing
-            const isNewUser = false;
+            isNewUser = false;
         }
 
         const token = generateToken(user);
