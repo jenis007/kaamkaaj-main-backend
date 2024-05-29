@@ -3,7 +3,7 @@ const ErrorHandler = require("../../middleware/errorHandler");
 const OtpModel = require("../../models/otpModel");
 const { generateToken } = require("../../utils/tokenGenerator");
 const Candidate = require("../../models/Candidate/candidateModel");
-const Recruiter = require("../../models/recruiter/recruiterModel");
+const Recruiter = require("../../models/Recruiter/recruiterModel");
 
 const staticOTP = 1234;
 

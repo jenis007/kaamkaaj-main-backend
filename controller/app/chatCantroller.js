@@ -1,5 +1,5 @@
 const Candidate = require("../../models/Candidate/candidateModel");
-const Recruiter = require("../../models/recruiter/recruiterModel");
+const Recruiter = require("../../models/Recruiter/recruiterModel");
 const Chat = require("../../models/chatModel");
 const { StatusCodes } = require("http-status-codes");
 const ErrorHandler = require("../../middleware/errorHandler");

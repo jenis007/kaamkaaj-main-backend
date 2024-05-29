@@ -1,5 +1,5 @@
 const { StatusCodes } = require("http-status-codes");
-const Recruiter = require("../../models/recruiter/recruiterModel");
+const Recruiter = require("../../models/Recruiter/recruiterModel");
 const ErrorHandler = require("../../middleware/errorHandler");
 const JobPost = require("../../models/Recruiter/jobPostModel");
 

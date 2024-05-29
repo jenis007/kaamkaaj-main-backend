@@ -1,6 +1,6 @@
 const Candidate = require("../models/Candidate/candidateModel");
 const Chat = require("../models/chatModel");
-const Recruiter = require("../models/recruiter/recruiterModel");
+const Recruiter = require("../models/Recruiter/recruiterModel");
 
 module.exports.extractFolderAndFilename = (imageUrl) => {
     const segments = imageUrl.split('/');

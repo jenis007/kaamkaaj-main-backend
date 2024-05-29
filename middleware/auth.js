@@ -1,6 +1,6 @@
 const ErrorHandler = require("./errorHandler");
 const { verifyToken } = require("../utils/tokenGenerator");
-const Recruiter = require("../models/recruiter/recruiterModel");
+const Recruiter = require("../models/Recruiter/recruiterModel");
 
 module.exports.authenticateUser = async (req, res, next) => {
   const authorizationHeader = req.headers.authorization;

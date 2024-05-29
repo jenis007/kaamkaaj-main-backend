@@ -2,7 +2,7 @@ const { StatusCodes } = require("http-status-codes");
 const PremiumPlan = require("../../models/admin/plansModel");
 const ErrorHandler = require("../../middleware/errorHandler");
 const Candidate = require("../../models/Candidate/candidateModel");
-const Recruiter = require("../../models/recruiter/recruiterModel");
+const Recruiter = require("../../models/Recruiter/recruiterModel");
 
 const createPremiumPlan = async (req, res, next) => {
     try {

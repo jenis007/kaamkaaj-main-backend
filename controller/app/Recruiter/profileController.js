@@ -1,6 +1,6 @@
 const { StatusCodes } = require("http-status-codes");
 const ErrorHandler = require("../../../middleware/errorHandler");
-const Recruiter = require("../../../models/recruiter/recruiterModel");
+const Recruiter = require("../../../models/Recruiter/recruiterModel");
 const Candidate = require("../../../models/Candidate/candidateModel");
 const { checkPremiumRecruiter } = require("../../../utils/helper");
 

@@ -1,7 +1,7 @@
 const { StatusCodes } = require("http-status-codes");
 const ErrorHandler = require("../../../middleware/errorHandler");
 const JobPost = require("../../../models/Recruiter/jobPostModel");
-const Recruiter = require("../../../models/recruiter/recruiterModel");
+const Recruiter = require("../../../models/Recruiter/recruiterModel");
 const { checkPremiumRecruiter } = require("../../../utils/helper");
 
 const createJobPost = async (req, res, next) => {
