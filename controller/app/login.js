@@ -69,6 +69,10 @@ module.exports.login = async (req, res, next) => {
             } else if (type === 'recruiter') {
                 user = await Recruiter.create({ mobile_number, country_code });
             }
+            const isNewUser = true;
+        } else {
+            // User is existing
+            const isNewUser = false;
         }
 
         const token = generateToken(user);
@@ -78,7 +82,8 @@ module.exports.login = async (req, res, next) => {
             message: `Login successful`,
             data: user,
             token,
-            type: type
+            type: type,
+            isNewUser: isNewUser
         });
     } catch (error) {
         return next(new ErrorHandler(error, StatusCodes.INTERNAL_SERVER_ERROR));
