@@ -13,8 +13,8 @@ const router = express.Router()
 
 // profile
 router.put("/recruiter/update/profile/:recruiterId", authenticateUser, authorizePermission("recruiter"), profileController.updateRecruiterData);
-router.get("/recruiter/one/profile/:recruiterId", authenticateUser, authorizePermission("recruiter"), uploadProfilePicture, profileController.getRecruiterDetails);
-router.put("/recruiter/update/profile_picture/:recruiterId", authenticateUser, authorizePermission("recruiter"), profileController.uplodeProfilePicturRecruiter);
+router.get("/recruiter/one/profile/:recruiterId", authenticateUser, authorizePermission("recruiter"), profileController.getRecruiterDetails);
+router.put("/recruiter/update/profile_picture/:recruiterId", authenticateUser, authorizePermission("recruiter"), uploadProfilePicture, profileController.uplodeProfilePicturRecruiter);
 
 // requst admin
 router.get("/recruiter/request/profile/:recruiterId", authenticateUser, authorizePermission("recruiter"), profileController.checkProfileRequestStatus);
