@@ -236,10 +236,10 @@ const getSavedProfiles = async (req, res, next) => {
         const { recruiterId } = req.params;
 
         const recruiter = await Recruiter.findById(recruiterId).populate('saved_profiles');
-
         if (!recruiter) {
             throw new ErrorHandler("Recruiter not found", StatusCodes.NOT_FOUND);
         }
+
         const { activePremium } = await checkPremiumRecruiter(req.user._id)
 
         const response = {
@@ -258,6 +258,7 @@ const getSavedProfiles = async (req, res, next) => {
 const removeSavedProfile = async (req, res, next) => {
     try {
         const { recruiterId, candidateId } = req.body;
+        
         const recruiter = await Recruiter.findById(recruiterId);
         if (!recruiter) {
             throw new ErrorHandler("Recruiter not found", StatusCodes.NOT_FOUND);
