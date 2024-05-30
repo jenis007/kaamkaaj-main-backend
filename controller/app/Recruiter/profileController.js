@@ -9,7 +9,7 @@ const updateRecruiterData = async (req, res, next) => {
         const { recruiterId } = req.params;
         const update = req.body;
 
-        const requiredFields = ['frist_name', 'last_name', 'email', 'job_position', 'comapany_detail'];
+        const requiredFields = ['first_name', 'last_name', 'email', 'job_position', 'comapany_detail'];
         for (const field of requiredFields) {
             if (!update[field]) {
                 throw new ErrorHandler(`Missing or empty required field: ${field}`, StatusCodes.BAD_REQUEST);
@@ -258,7 +258,7 @@ const getSavedProfiles = async (req, res, next) => {
 const removeSavedProfile = async (req, res, next) => {
     try {
         const { recruiterId, candidateId } = req.body;
-        
+
         const recruiter = await Recruiter.findById(recruiterId);
         if (!recruiter) {
             throw new ErrorHandler("Recruiter not found", StatusCodes.NOT_FOUND);
