@@ -2,7 +2,9 @@ const { StatusCodes } = require("http-status-codes");
 const ErrorHandler = require("../../../middleware/errorHandler");
 const Recruiter = require("../../../models/Recruiter/recruiterModel");
 const Candidate = require("../../../models/Candidate/candidateModel");
-const { checkPremiumRecruiter } = require("../../../utils/helper");
+const { checkPremiumRecruiter, extractFolderAndFilename } = require("../../../utils/helper");
+const path = require('path');
+const fs = require('fs');
 
 const updateRecruiterData = async (req, res, next) => {
     try {
@@ -76,7 +78,7 @@ const uplodeProfilePicturRecruiter = async (req, res, next) => {
         if (!recruiter) {
             throw new ErrorHandler("recruiter not found", StatusCodes.NOT_FOUND);
         }
-
+        
         if (!req.file) {
             throw new ErrorHandler("profile picture file not provided", StatusCodes.BAD_REQUEST);
         }

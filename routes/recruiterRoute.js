@@ -29,7 +29,7 @@ router.put("/recruiter/job/update-job-status/:jobId", authenticateUser, authoriz
 router.get("/recruiter/candidate/all", authenticateUser, authorizePermission("recruiter"), profileController.getAllCandidates);
 router.get("/recruiter/candidate/one/:candidateId", authenticateUser, authorizePermission("recruiter"), profileController.getOneCandidates);
 
-// candidet save
+// candidet save              
 router.post("/recruiter/candidate/save-profile", authenticateUser, authorizePermission("recruiter"), profileController.saveCandidateProfile);
 router.get("/recruiter/candidate/save-profile/all/:recruiterId", authenticateUser, authorizePermission("recruiter"), profileController.getSavedProfiles);
 router.delete("/recruiter/candidate/remove-save-profile", authenticateUser, authorizePermission("recruiter"), profileController.removeSavedProfile);
