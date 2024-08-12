@@ -27,7 +27,7 @@ router.get("/admin/job/one/:jobId", jobController.getJobPostById)
 router.get("/admin/job/recruiter-all/:recruiterId", jobController.getAllJobPostsByRecruiterId)
 router.put("/admin/job/request-update/:jobId", recruitersCantroller.requestUpdateJobPost)
 
-// dashboard
+// dashboard 
 
 // premiumPlan
 router.post("/admin/premium-plan/create", premiumPlanCantroller.createPremiumPlan);
