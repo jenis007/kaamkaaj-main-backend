@@ -64,7 +64,7 @@ const recruiterSchema = new mongoose.Schema({
             type: Date,
             default: Date.now
         },
-    }
+    }  
     ],
     job_list: [{
         type: mongoose.Schema.Types.ObjectId,

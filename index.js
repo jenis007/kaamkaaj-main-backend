@@ -10,6 +10,7 @@ mongoose.connect(process.env.DB_URI).then(() => {
 // const serverInstance = app.listen(port, () => {
 //     console.log(`Server is working on port ${port}`);
 // });
+
 const serverInstance = server.listen(port, () => {
     console.log(`Server is working on port ${port}`);
 });

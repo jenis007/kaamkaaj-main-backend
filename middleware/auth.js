@@ -8,7 +8,7 @@ module.exports.authenticateUser = async (req, res, next) => {
     return next(new ErrorHandler("Please logIn to access this resource", 401));
   }
 
-  const bearer = authorizationHeader.split(' ')[0];
+  const bearer = authorizationHeader.split(' ')[1];
   const token = bearer;
 
   try {

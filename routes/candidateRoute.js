@@ -32,7 +32,7 @@ router.delete("/candidate/job/save/remove", authenticateUser, authorizePermissio
 
 // filters - dropdown
 router.get("/filter/all", authenticateUser, profileController.getAllFiltersCandidat);
-router.get("/filter/one/jobId", authenticateUser, profileController.getFilterByIdCandidate);
+router.get("/filter/one/:id", authenticateUser, profileController.getFilterByIdCandidate);
 
 // chat
 router.post("/candidate/chat/send-msg", chatCantroller.sendMessage);

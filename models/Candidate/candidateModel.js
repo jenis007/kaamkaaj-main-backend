@@ -98,11 +98,11 @@ const candidateSchema = new mongoose.Schema({
     job_preference: [{
         job_type: {
             type: String,
-            enum: ['Full Time', 'Internship', "Contract"],
+            enum: ['Full Time', 'Part Time', "Freelancer", "Internship"],
         },
         functional_area: [String],
         industry: [String],
-        preferred_city: String,
+        preferred_city: [String],
         expected_salary: String,
     }],
     education: [{

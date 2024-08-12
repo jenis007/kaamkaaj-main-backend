@@ -56,7 +56,8 @@ const getRecruiterDetails = async (req, res, next) => {
         if (!recruiter) {
             return next(new ErrorHandler("Recruiter not found", StatusCodes.NOT_FOUND));
         }
-        const { activePremium } = await checkPremiumRecruiter(req.user._id)
+
+        const { activePremium } = await checkPremiumRecruiter(recruiterId)
 
         const response = {
             code: StatusCodes.OK,
