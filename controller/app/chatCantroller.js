@@ -13,7 +13,7 @@ const sendMessage = async (req, res, next) => {
         const candidate = await Candidate.findById(candidateId);
         const recruiter = await Recruiter.findById(recruiterId);
 
-        const message = {
+        const message = {  
             text: text,
             sender_type: sender_type,
             updated_at: Date.now()
@@ -68,7 +68,7 @@ const sendMessage = async (req, res, next) => {
             type: "message",
             data: getChat
         };
-        getSocketDataUsingId(senderData);
+        getSocketDataUsingId(senderData); 
         getSocketDataUsingId(receiverData);
 
         const response = {
