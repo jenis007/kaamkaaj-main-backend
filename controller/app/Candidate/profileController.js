@@ -50,6 +50,7 @@ const uplodeProfilePictur = async (req, res, next) => {
                 try {
                     fs.unlinkSync(existingImagePath);
                 } catch (error) {
+                    console.log(error)
                     return next(new ErrorHandler(error, StatusCodes.INTERNAL_SERVER_ERROR));
                 }
             }

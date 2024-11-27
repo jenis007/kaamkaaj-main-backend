@@ -79,7 +79,7 @@ const uplodeProfilePicturRecruiter = async (req, res, next) => {
         if (!recruiter) {
             throw new ErrorHandler("recruiter not found", StatusCodes.NOT_FOUND);
         }
-        
+
         if (!req.file) {
             throw new ErrorHandler("profile picture file not provided", StatusCodes.BAD_REQUEST);
         }
@@ -182,7 +182,7 @@ const getAllCandidates = async (req, res, next) => {
             baseQuery.experience = { $gte: experience };
         }
 
-        const candidates = await Candidate.find(baseQuery).sort({ updated_at: -1 });
+        const candidates = await Candidate.find(baseQuery, { mobile_number: 1, profile_picture: 1, first_name: 1, last_name: 1, date_of_birth: 1, "job_preference.expected_salary": 1, experience_level: 1, home_page_profile: 1, skills: 1, availability: 1, education: 1 }).sort({ updated_at: -1 });
         const { activePremium } = await checkPremiumRecruiter(req.user._id)
 
         const response = {

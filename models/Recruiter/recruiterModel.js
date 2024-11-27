@@ -41,6 +41,9 @@ const recruiterSchema = new mongoose.Schema({
         },
         about: {
             type: String
+        },
+        pincode: {
+            type: Number
         }
     },
     job_position: {
@@ -64,7 +67,7 @@ const recruiterSchema = new mongoose.Schema({
             type: Date,
             default: Date.now
         },
-    }  
+    }
     ],
     job_list: [{
         type: mongoose.Schema.Types.ObjectId,
